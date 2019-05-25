@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "toyolab.io",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "We are a student tech community in Toyohashi, Aichi. Most of the members is a student from Toyohashi University of Technology. We will hold some workshops and hackathon in late 2019 and early 2020.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "ToyoLab <support@toyolab.io>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -38,15 +38,15 @@
   "devDependencies": {
     "prettier": "^1.17.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://toyolab.io",
   "keywords": [
-    "gatsby"
+    "toyolab"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/toyolabio/www.toyolab.io.git"
   },
   "scripts": {
     "build": "gatsby build",
