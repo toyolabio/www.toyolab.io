@@ -1,7 +1,7 @@
 # www.toyolab.io
 Website of ToyoLab
 
-##Development Guide
+## Development Guide
 1. clone this repository via 
   ```shell
   git clone https://github.com/toyolabio/www.toyolab.io.git
