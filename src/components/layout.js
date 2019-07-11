@@ -1,10 +1,18 @@
 import React from "react"
+import styled from "styled-components"
 
 import { rhythm } from "../utils/typography"
 import Header from "./header"
+import Footer from "./footer"
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
 
 const Layout = ({ location: { pathname }, children }) => (
-  <div>
+  <Container>
     <Header location={pathname} />
     <main
       style={{
@@ -16,12 +24,8 @@ const Layout = ({ location: { pathname }, children }) => (
     >
       {children}
     </main>
-    <footer>
-      © {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
-    </footer>
-  </div>
+    <Footer />
+  </Container>
 )
 
 export default Layout
