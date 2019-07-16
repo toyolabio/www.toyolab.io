@@ -1,10 +1,16 @@
 import React from "react"
+import styled from "styled-components/macro"
 
 import { rhythm } from "../utils/typography"
 import Header from "./header"
 
 const Layout = ({ location: { pathname }, children }) => (
-  <div>
+  <div
+    css={`
+      margin: 0 auto;
+      max-width: ${rhythm(48)};
+    `}
+  >
     <Header location={pathname} />
     <main
       style={{
