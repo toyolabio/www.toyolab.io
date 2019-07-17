@@ -9,7 +9,7 @@ export default ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="NotFound" />
+      <SEO title="Events" />
     </Layout>
   )
 }

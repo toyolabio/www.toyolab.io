@@ -1,19 +1,49 @@
 module.exports = {
   siteMetadata: {
-    title: `toyolab.io`,
+    title: `Toyohashi Technology Laboratory`,
     author: `toyolab`,
     description: `Toyohashi University of Technology students organization`,
     siteUrl: `https://www.toyolab.io/`,
     social: {
-      twitter: ``,
+      twitter: `toyolabio`,
+      github: `toyolabio`,
+      mail: `contact@toyolab.io`,
     },
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: `pages`,
+        path: `${__dirname}/content/announcements`,
+        name: `announcements`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/events`,
+        name: `events`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/members`,
+        name: `members`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/sponsors`,
+        name: `sponsors`,
       },
     },
     {
@@ -21,13 +51,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/data`,
-        name: `data`,
       },
     },
     {

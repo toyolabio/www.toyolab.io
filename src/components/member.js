@@ -2,14 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
 
-// // const Avatar = styled.img`
-// //   width: 300px;
-// //   height: 300px;
-// //   border-radius: 9999px;
-// `
 const Wrapper = styled.div``
 
-const Member = ({ memberData }) => (
+export default ({ memberData }) => (
   <Wrapper>
     <h1>{memberData.frontmatter.name}</h1>
     <div className="team card-two">
@@ -37,5 +32,3 @@ const Member = ({ memberData }) => (
     </div>
   </Wrapper>
 )
-
-export default Member

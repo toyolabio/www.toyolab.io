@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components/macro"
-
 import { rhythm } from "../utils/typography"
+
 import Header from "./header"
 import Footer from "./footer"
 

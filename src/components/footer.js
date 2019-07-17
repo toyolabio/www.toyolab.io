@@ -39,7 +39,7 @@ const Column = ({ title, links }) => (
   </Col>
 )
 
-const Footer = () => (
+export default () => (
   <ModifiedFooter>
     <FooterWrapper>
       <Row gutter={16} type="flex">
@@ -75,5 +75,3 @@ const Footer = () => (
     </FooterWrapper>
   </ModifiedFooter>
 )
-
-export default Footer
