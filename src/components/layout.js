@@ -1,9 +1,24 @@
 import React from "react"
-import styled from "styled-components/macro"
+import styled, { createGlobalStyle } from "styled-components/macro"
 
 import { rhythm } from "../utils/typography"
 import Header from "./header"
 import Footer from "./footer"
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+`
 
 const Container = styled.div`
   display: flex;
@@ -13,6 +28,7 @@ const Container = styled.div`
 
 const Layout = ({ location: { pathname }, children }) => (
   <Container>
+    <GlobalStyle />
     <Header location={pathname} />
     <main
       style={{
