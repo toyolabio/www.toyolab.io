@@ -1,7 +1,6 @@
 ---
 name: Hidenori Toyoshima
 avatar: ./hidenori.png
-color: "#132ACB"
+bio : Conference Master
+index: 2
 ---
-
-#Conference Master

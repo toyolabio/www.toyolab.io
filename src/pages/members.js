@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Col, Row } from "antd"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -13,14 +14,23 @@ export default ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Members" />
 
-      <h1>Meet The Team</h1>
+      <h1>運営メンバー</h1>
       <p>
-        Our team of qualified accountants and financial consultants can help
-        your business at any stage of it’s growth.
+        トヨらぼの活動に積極的にコミットしてくれているメンバーです。
       </p>
-      {members.map(({ node }, index) => (
-        <Member memberData={node} key={index} />
-      ))}
+      <Row gutter={16} justify="center">
+        {members.map(({ node }, index) => (
+          <Col
+            span={24}
+            sm={12}
+            md={8}
+            key={index}
+            style={{ marginBottom: "2rem" }}
+          >
+            <Member properties={node.frontmatter} />
+          </Col>
+        ))}
+      </Row>
     </Layout>
   )
 }
@@ -41,11 +51,16 @@ export const pageQuery = graphql`
           html
           frontmatter {
             name
-            color
+            github
+            twitter
+            facebook
+            website
+            skills
+            bio
             avatar {
               childImageSharp {
-                fixed(width: 300, height: 300) {
-                  ...GatsbyImageSharpFixed_noBase64
+                fluid(maxWidth: 512) {
+                  ...GatsbyImageSharpFluid_tracedSVG
                 }
               }
             }

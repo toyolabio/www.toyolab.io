@@ -1,7 +1,5 @@
 ---
 name: Yuto Nakanishi
 avatar: ./saba.png
-color: "#132ACB"
+bio: a.k.a 上海
 ---
-
-# a.k.a 上海
