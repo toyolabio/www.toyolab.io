@@ -1,49 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `Toyohashi Technology Laboratory`,
+    title: `toyolab.io`,
     author: `toyolab`,
     description: `Toyohashi University of Technology students organization`,
     siteUrl: `https://www.toyolab.io/`,
     social: {
-      twitter: `toyolabio`,
-      github: `toyolabio`,
-      mail: `contact@toyolab.io`,
+      twitter: ``,
     },
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/announcements`,
-        name: `announcements`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/events`,
-        name: `events`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/members`,
-        name: `members`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/sponsors`,
-        name: `sponsors`,
+        path: `${__dirname}/src/pages`,
+        name: `pages`,
       },
     },
     {
@@ -51,6 +21,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data`,
+        name: `data`,
       },
     },
     {
@@ -102,12 +79,6 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-antd`,
-      options: {
-        style: false,
       },
     },
   ],

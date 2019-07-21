@@ -1,6 +1,6 @@
 # www.toyolab.io
 Website of ToyoLab
-Add Event Component
+
 ## Development Guide
 1. clone this repository via 
   ```shell
