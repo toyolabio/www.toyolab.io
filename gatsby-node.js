@@ -9,7 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
     `
       {
         posts: allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/blog|announcements/" } }
+          filter: { fileAbsolutePath: { regex: "/blog|events|announcements/" } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
