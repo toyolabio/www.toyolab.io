@@ -1,7 +1,6 @@
 ---
 name: Kazuhisa Kawaguchi
 avatar: ./kazuhisa.png
-color: "#132ACB"
+bio: Big bro!
+index: 3
 ---
-
-# Big bro!

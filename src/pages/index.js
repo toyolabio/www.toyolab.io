@@ -5,6 +5,8 @@ import { Typography } from "antd"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Sponsors from "../components/sponsors"
+import Members from "../components/members"
+
 const { Title, Paragraph } = Typography
 
 export default ({ data, location }) => {
@@ -20,7 +22,9 @@ export default ({ data, location }) => {
       >
         <div style={{ flex: 1 }}>
           <Title level={3}>Go to the future</Title>
-          <Paragraph>愛知県を中心に活動する、学生団体</Paragraph>
+          <Paragraph>
+            豊橋市を拠点に活動する、学生私たちは、豊橋市を拠点に活動する学生エンジニアのコミュニティです。
+          </Paragraph>
           <Paragraph>
             ここに文字を入力。ここに文字を入力。ここに文字を入力。ここに文字を入力。ここに文字を入力。ここに文字を入力。
             ここに文字を入力。ここに文字を入力。ここに文字を入力。ここに文字を入力。ここに文字を入力。ここに文字を入力。
@@ -33,6 +37,7 @@ export default ({ data, location }) => {
           />
         </div>
       </div>
+      <Members />
       <Sponsors />
     </Layout>
   )
