@@ -1,7 +1,5 @@
 ---
 name: Tepy THAI
 avatar: ./tepy.png
-color: "#26A69A"
+bio : An owl lover
 ---
-
-# An owl lover

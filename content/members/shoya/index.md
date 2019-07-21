@@ -1,7 +1,14 @@
 ---
-name: Shoya MATSUMOTO
+name: 松元 翔矢
 avatar: ./shoya.png
-color: "#AA3939"
+bio: フロントエンドエンジニア　サーバーサイド勉強中です💪グッズ🎁あります!🎉🐶🐻
+twitter: m47ch4n
+github: m47ch4n
+website: https://www.m47ch4n.net
+skills: [
+  html,
+  js,
+  react,
+  elixir
+]
 ---
-
-A Ninja.
