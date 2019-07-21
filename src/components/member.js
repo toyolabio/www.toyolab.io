@@ -10,19 +10,31 @@ export default ({ properties }) => {
   let actions = []
   if (github)
     actions.push(
-      <a target="_blank" href={`https://github.com/${github}`} rel="noopener noreferrer">
+      <a
+        target="_blank"
+        href={`https://github.com/${github}`}
+        rel="noopener noreferrer"
+      >
         <Icon type="github" />
       </a>
     )
   if (twitter)
     actions.push(
-      <a target="_blank" href={`https://twitter.com/${twitter}`} rel="noopener noreferrer">
+      <a
+        target="_blank"
+        href={`https://twitter.com/${twitter}`}
+        rel="noopener noreferrer"
+      >
         <Icon type="twitter" />
       </a>
     )
   if (facebook)
     actions.push(
-      <a target="_blank" href={`https://www.facebook.com/${facebook}`} rel="noopener noreferrer">
+      <a
+        target="_blank"
+        href={`https://www.facebook.com/${facebook}`}
+        rel="noopener noreferrer"
+      >
         <Icon type="facebook" />
       </a>
     )
@@ -35,16 +47,16 @@ export default ({ properties }) => {
   return (
     <Card
       hoverable
-      style={{ width: 240, margin: "auto" }}
+      style={{ minWidth: 240, margin: "auto" }}
       cover={
         <Image
           style={{
-            width: 240-1,
-            height: 240-1,
+            minWidth: 240 - 2,
+            minHeight: 240 - 2,
           }}
           imgStyle={{
-            width: 240-2,
-            height: 240-2,
+            minWidth: 240 - 2,
+            minHeight: 240 - 2,
           }}
           fluid={avatar.childImageSharp.fluid}
         />

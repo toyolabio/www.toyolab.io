@@ -15,9 +15,7 @@ export default ({ data, location }) => {
       <SEO title="Members" />
 
       <h1>運営メンバー</h1>
-      <p>
-        トヨらぼの活動に積極的にコミットしてくれているメンバーです。
-      </p>
+      <p>トヨらぼの活動に積極的にコミットしてくれているメンバーです。</p>
       <Row gutter={16} justify="center">
         {members.map(({ node }, index) => (
           <Col
