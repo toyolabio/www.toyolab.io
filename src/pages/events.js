@@ -9,6 +9,7 @@ import Event from "../components/event"
 export default ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const events = data.allMarkdownRemark.edges
+  const beforeEvents = events.fillter(
 
   return (
     <Layout location={location} title={siteTitle}>
