@@ -1,6 +1,6 @@
 ---
 name: 東 昭太朗
-avatar: ./shotaro.png
+avatar: ./shotaro.jpg
 bio: トヨらぼの発起人で現代表。技術の守備範囲はL1-L7。🏎が趣味。
 facebook: sho0709
 twitter: east9698
