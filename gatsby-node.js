@@ -5,10 +5,11 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  graphql(
+  const eventPost = path.resolve(`./src/templates/events-post.js`)
+  return graphql(
     `
       {
-        posts: allMarkdownRemark(
+        blogs: allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "/blog|announcements/" } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
@@ -23,37 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-      }
-    `
-  ).then(result => {
-    if (result.errors) {
-      throw result.errors
-    }
-
-    // Create blog posts pages.
-    const posts = result.data.posts.edges
-
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
-
-      createPage({
-        path: post.node.frontmatter.slug,
-        component: blogPost,
-        context: {
-          slug: post.node.frontmatter.slug,
-          previous,
-          next,
-        },
-      })
-    })
-  })
-
-  const eventsPost = path.resolve(`./src/templates/events-post.js`)
-  graphql(
-    `
-      {
-        posts: allMarkdownRemark(
+        events: allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "/events/" } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
@@ -76,24 +47,42 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create blog posts pages.
-    const posts = result.data.posts.edges
+    const blogs = result.data.blogs.edges
+    const events = result.data.events.edges
 
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+    blogs.forEach((blog, index) => {
+      const previous = index === blogs.length - 1 ? null : blogs[index + 1].node
+      const next = index === 0 ? null : blogs[index - 1].node
 
       createPage({
-        path: post.node.frontmatter.slug,
-        component: eventsPost,
+        path: blog.node.frontmatter.slug,
+        component: blogPost,
         context: {
-          slug: post.node.frontmatter.slug,
+          slug: blog.node.frontmatter.slug,
           previous,
           next,
         },
       })
     })
+
+    events.forEach((event, index) => {
+      const previous =
+        index === events.length - 1 ? null : events[index + 1].node
+      const next = index === 0 ? null : events[index - 1].node
+
+      createPage({
+        path: event.node.frontmatter.slug,
+        component: eventPost,
+        context: {
+          slug: event.node.frontmatter.slug,
+          previous,
+          next,
+        },
+      })
+    })
+
+    return null
   })
-  return null
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
