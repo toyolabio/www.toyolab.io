@@ -39,14 +39,24 @@ const Column = ({ title, links }) => (
   </Col>
 )
 
-const Column2 = ({ title }) => (
+const Column2 = ({ title, links }) => (
   <Col span={24} sm={12} md={8} style={{ marginBottom: "2rem" }}>
     <Title style={{ color: "lightgray" }} level={3}>
       {title}
     </Title>
-    <a href="mailto:mail@mail.com?subject=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&amp;body=%E4%B8%8B%E8%A8%98%E3%81%AE%E9%A0%85%E7%9B%AE%E3%81%AB%E3%81%9D%E3%82%8C%E3%81%9E%E3%82%8C%E8%A8%98%E5%85%A5%E3%81%97%E3%81%A6%E9%80%81%E4%BF%A1%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0D%0A%0D%0A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%0D%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%E3%80%8C%E3%80%8D%0D%0A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%E3%80%8C%E3%80%8D%0D%0A%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%E5%86%85%E5%AE%B9%EF%BC%9A%E3%80%8C%E3%80%8D%0D%0A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A">
-      mail@mail.com
-    </a>
+    {links.map(link => (
+      <a style={{ display: "block" }} href={link.path} target="_blank">
+        <Text style={{ color: "lightgray" }}>
+          {link.icon && (
+            <Icon
+              style={{ color: "lightgray", marginRight: "5px" }}
+              type={link.icon}
+            />
+          )}
+          {link.title}
+        </Text>
+      </a>
+    ))}
   </Col>
 )
 
@@ -64,18 +74,18 @@ export default () => (
             { title: "Members", path: `/members`, icon: "team" },
           ]}
         />
-        <Column
+        <Column2
           title="Links"
           links={[
-            { title: "Twitter", outLink: `https://twitter.com/toyolabio/`, icon: "twitter" },
-            { title: "Facebook", outLink: `https://www.facebook.com/toyolabio/`, icon: "facebook" },
+            { title: "Twitter", path: `https://twitter.com/toyolabio/`, icon: "twitter" },
+            { title: "Facebook", path: `https://www.facebook.com/toyolabio/`, icon: "facebook" },
           ]}
         />
         
-        <Column
+        <Column2
           title="Contact"
           links={[
-            { title: "Mail(contact@toyolab.io)", outLink: `mailto:contact@toyolab.io`, icon: "mail" },
+            { title: "Mail(contact@toyolab.io)", path: `mailto:contact@toyolab.io`, icon: "mail" },
           ]}
         />
         <Col span={24}>
