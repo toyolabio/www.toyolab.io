@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
-import { Row, Col, Typography, Icon } from "antd"
+import { Row, Col, Typography } from "antd"
 import Member from "./member"
 const { Title } = Typography
 const Wrapper = styled.div`

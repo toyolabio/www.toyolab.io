@@ -45,7 +45,13 @@ const Column2 = ({ title, links }) => (
       {title}
     </Title>
     {links.map(link => (
-      <a style={{ display: "block" }} href={link.path} target="_blank">
+      <a
+        style={{ display: "block" }}
+        href={link.path}
+        target="_blank"
+        rel="noopener noreferrer"
+        key={link.title}
+      >
         <Text style={{ color: "lightgray" }}>
           {link.icon && (
             <Icon
@@ -77,15 +83,27 @@ export default () => (
         <Column2
           title="Links"
           links={[
-            { title: "Twitter", path: `https://twitter.com/toyolabio/`, icon: "twitter" },
-            { title: "Facebook", path: `https://www.facebook.com/toyolabio/`, icon: "facebook" },
+            {
+              title: "Twitter",
+              path: `https://twitter.com/toyolabio/`,
+              icon: "twitter",
+            },
+            {
+              title: "Facebook",
+              path: `https://www.facebook.com/toyolabio/`,
+              icon: "facebook",
+            },
           ]}
         />
-        
+
         <Column2
           title="Contact"
           links={[
-            { title: "Mail(contact@toyolab.io)", path: `mailto:contact@toyolab.io`, icon: "mail" },
+            {
+              title: "Mail(contact@toyolab.io)",
+              path: `mailto:contact@toyolab.io`,
+              icon: "mail",
+            },
           ]}
         />
         <Col span={24}>

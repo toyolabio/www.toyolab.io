@@ -6,7 +6,7 @@ const { Meta } = Card
 
 export default ({ node }) => {
   const { title, date, cover } = node.frontmatter
-  const { excerpt } = node
+  // const { excerpt } = node
 
   return (
     <Card

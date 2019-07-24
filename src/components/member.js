@@ -51,12 +51,13 @@ export default ({ properties }) => {
       cover={
         <Image
           style={{
-            minWidth: 240 - 2,
-            minHeight: 240 - 2,
+            // minWidth: 240 - 2,
+            height: 240,
           }}
           imgStyle={{
-            minWidth: 240 - 2,
-            minHeight: 240 - 2,
+            // minWidth: 240 - 2,
+            height: 240,
+            // objectFit: "contain",
           }}
           fluid={avatar.childImageSharp.fluid}
         />

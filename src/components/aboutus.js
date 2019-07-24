@@ -1,7 +1,7 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import { Row, Col, Typography, Icon } from "antd"
+import { Row, Col, Typography } from "antd"
 import Description from "./description"
 const { Title } = Typography
 const Wrapper = styled.div`
@@ -17,7 +17,7 @@ export default () => (
     render={({ allMarkdownRemark: { edges } }) => {
       return (
         <>
-          <Wrapper style = {{marginBottom:"20px"}}>
+          <Wrapper style={{ marginBottom: "20px" }}>
             <Title level={3} style={{ color: "gray" }}>
               やること
             </Title>
@@ -44,9 +44,7 @@ export default () => (
 export const descriptionQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/description/" }
-      }
+      filter: { fileAbsolutePath: { regex: "/description/" } }
       sort: { fields: [frontmatter___index], order: ASC }
     ) {
       edges {
