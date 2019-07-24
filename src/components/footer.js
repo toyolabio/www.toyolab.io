@@ -57,6 +57,7 @@ export default () => (
         <Column
           title="Resources"
           links={[
+            { title: "Home", path: `/`, icon: "home" },
             { title: "Events", path: `/events`, icon: "calendar" },
             { title: "Annoucements", path: `/announcements`, icon: "bell" },
             { title: "Blog", path: `/blog`, icon: "read" },
@@ -66,16 +67,17 @@ export default () => (
         <Column
           title="Links"
           links={[
-            { title: "Events", path: `/events`, icon: "calendar" },
-            { title: "Annoucements", path: `/announcements`, icon: "bell" },
-            { title: "Blog", path: `/blog`, icon: "read" },
+            { title: "Twitter", outLink: `https://twitter.com/toyolabio/`, icon: "twitter" },
+            { title: "Facebook", outLink: `https://www.facebook.com/toyolabio/`, icon: "facebook" },
           ]}
         />
+        
         <Column
-          title="Products"
-          links={[{ title: "Events", path: `/events`, icon: "calendar" }]}
+          title="Contact"
+          links={[
+            { title: "Mail(contact@toyolab.io)", outLink: `mailto:contact@toyolab.io`, icon: "mail" },
+          ]}
         />
-        <Column2 title="Contact" />
         <Col span={24}>
           <CopyrightWrapper>
             © {new Date().getFullYear()}, {` `}
