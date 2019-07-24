@@ -21,7 +21,7 @@ export default () => (
         <>
           <Wrapper>
             <Title level={3} style={{ color: "gray" }}>
-              Sponsors
+              スポンサー
             </Title>
             <Paragraph>
               私たちの活動をご支援いただける企業・団体を募集しています！<br/>
