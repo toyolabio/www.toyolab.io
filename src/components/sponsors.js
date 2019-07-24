@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Row, Col, Typography } from "antd"
-const { Title } = Typography
+const { Title, Paragraph } = Typography
 
 const Wrapper = styled.div`
   width: 100%;
@@ -23,6 +23,10 @@ export default () => (
             <Title level={3} style={{ color: "gray" }}>
               Sponsors
             </Title>
+            <Paragraph>
+              私たちの活動をご支援いただける企業・団体を募集しています！<br/>
+              資料等をご希望される場合は、 <a href="mailto:contact@toyolab.io">contact@toyolab.io</a>までご連絡ください。
+            </Paragraph>
             <Row gutter={16} type="flex">
               {sponsors.map(({ node: { frontmatter } }, index) => (
                 <Col
