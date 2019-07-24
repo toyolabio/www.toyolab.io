@@ -1,0 +1,31 @@
+{
+  "shellLauncher.shells.windows": [
+    {
+      "shell": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "label": "Git bash"
+    },
+    {
+      "shell": "C:/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_1804.2019.521.0_x64__79rhkp1fndgsc/ubuntu.exe",
+      "label": "Ubuntu"
+    }
+  ],
+  // デフォルトの起動するターミナルをUbuntu18.04にするために下の２行が必要
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "javascript.format.enable": false,
+  "prettier.eslintIntegration": true,
+  //行を書き終えるごとに行のコードを整えてくれる
+  "editor.formatOnType": true,
+  //ペーストしたときにコードを整えてくれる
+  "editor.formatOnPaste": true,
+  "terminal.integrated.shell.windows": "C:/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_1804.2019.521.0_x64__79rhkp1fndgsc/ubuntu.exe",
+  //予測をどのときに出すのか
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  }
+}
