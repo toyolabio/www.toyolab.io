@@ -19,7 +19,7 @@ export default () => (
         <>
           <Wrapper>
             <Title level={3} style={{ color: "gray" }}>
-              Members
+              運営メンバー
             </Title>
             <Row gutter={16} justify="center" type="flex">
               {edges.map(({ node: { frontmatter } }, index) => (

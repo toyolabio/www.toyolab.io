@@ -22,7 +22,7 @@ export default ({ properties }) => {
       {icon}
       <Meta
         style={{
-          height: 90,
+          height: 100,
         }}
         title={name}
         description={description}
