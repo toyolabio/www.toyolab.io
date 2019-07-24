@@ -13,35 +13,38 @@ const { Title, Paragraph } = Typography
 
 export default ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-
+  /* */
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Index" />
       <div
         style={{
           display: "flex",
+          marginBottom: "10px"
         }}
       >
         <div style={{ flex: 1 }}>
-          <Title level={3}>
+          <Title level={3} style={{textAlign:"center"}}>
             Toyohashi Technology Laboratory
             <br></br>
             略して「トヨらぼ」
           </Title>
-          <Paragraph>
+          <div style={{ marginTop: 32, width: 400, margin:"auto" }}>
+            <Img
+                fluid={data.file.childImageSharp.fluid}
+                alt="Gatsby Docs are awesome"
+            />
+          </div>
+          <Paragraph style={{marginTop:"10px"}}>
             私たちは、豊橋市を拠点に活動する学生エンジニアのコミュニティです。
           </Paragraph>
           <Paragraph>
             技術のスキルアップを志す学生同士が集い、知見を共有していくことで、学生同士企業や地域・自治体、大学などと連携し、メンバー各々のスキルアップを図るとともに、
             多くに人に使ってもらえる「モノ」を作り出していきます。
           </Paragraph>
+         
         </div>
-        <div style={{ marginTop: 32, minWidth: 240, textAlign: "right" }}>
-          <Img
-              fluid={data.file.childImageSharp.fluid}
-              alt="Gatsby Docs are awesome"
-          />
-        </div>
+        
       </div>
       <AboutUs />
       <Members />
@@ -59,7 +62,7 @@ export const pageQuery = graphql`
     },
     file(relativePath: { eq: "mainVisual.jpg" }) {
       childImageSharp {
-        fluid(maxWidth:800) {
+        fluid(maxWidth:400) {
           ...GatsbyImageSharpFluid
         }
       }

@@ -17,7 +17,7 @@ export default () => (
     render={({ allMarkdownRemark: { edges } }) => {
       return (
         <>
-          <Wrapper>
+          <Wrapper style = {{marginBottom:"20px"}}>
             <Title level={3} style={{ color: "gray" }}>
               やること
             </Title>
