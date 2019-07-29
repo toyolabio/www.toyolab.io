@@ -6,7 +6,7 @@ const { Meta } = Card
 
 export default ({ node }) => {
   const { title, date, cover } = node.frontmatter
-  const { excerpt } = node
+  // const { excerpt } = node
 
   return (
     <Card
@@ -14,7 +14,7 @@ export default ({ node }) => {
       style={{ margin: "auto" }}
       cover={<Image fluid={cover.childImageSharp.fluid} />}
     >
-      <Meta title={title} description={date} />
+      <Meta title={title} description={"開催日：" + date} />
     </Card>
   )
 }

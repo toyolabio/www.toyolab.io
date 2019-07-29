@@ -12,6 +12,9 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-styled-components`,
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/announcements`,
@@ -51,6 +54,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/descriptions`,
+        name: `descriptions`,
       },
     },
     {
@@ -108,6 +118,14 @@ module.exports = {
       resolve: `gatsby-plugin-antd`,
       options: {
         style: false,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /content/, // See below to configure properly
+        },
       },
     },
   ],

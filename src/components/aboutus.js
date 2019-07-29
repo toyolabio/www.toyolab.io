@@ -1,8 +1,8 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { Row, Col, Typography } from "antd"
-import Member from "./member"
+import Description from "./description"
 const { Title } = Typography
 const Wrapper = styled.div`
   width: 100%;
@@ -13,13 +13,13 @@ const Wrapper = styled.div`
 
 export default () => (
   <StaticQuery
-    query={membersQuery}
+    query={descriptionQuery}
     render={({ allMarkdownRemark: { edges } }) => {
       return (
         <>
-          <Wrapper>
+          <Wrapper style={{ marginBottom: "20px" }}>
             <Title level={3} style={{ color: "gray" }}>
-              運営メンバー
+              団体の活動
             </Title>
             <Row gutter={16} justify="center" type="flex">
               {edges.map(({ node: { frontmatter } }, index) => (
@@ -30,11 +30,10 @@ export default () => (
                   style={{ marginBottom: "2rem" }}
                   key={index}
                 >
-                  <Member properties={frontmatter} />
+                  <Description properties={frontmatter} />
                 </Col>
               ))}
             </Row>
-            <Link to="/members">もっと見る</Link>
           </Wrapper>
         </>
       )
@@ -42,13 +41,10 @@ export default () => (
   />
 )
 
-export const membersQuery = graphql`
+export const descriptionQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/members/" }
-        frontmatter: { index: { ne: null } }
-      }
+      filter: { fileAbsolutePath: { regex: "/description/" } }
       sort: { fields: [frontmatter___index], order: ASC }
     ) {
       edges {
@@ -56,19 +52,7 @@ export const membersQuery = graphql`
           html
           frontmatter {
             name
-            github
-            twitter
-            facebook
-            website
-            skills
-            bio
-            avatar {
-              childImageSharp {
-                fluid(maxWidth: 512) {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
-              }
-            }
+            description
           }
         }
       }

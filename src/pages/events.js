@@ -1,7 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { Col, Row } from "antd"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Event from "../components/event"
@@ -9,14 +8,15 @@ import Event from "../components/event"
 export default ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const events = data.allMarkdownRemark.edges
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Events" />
       <Row gutter={16} justify="center">
         {events.map(({ node }, index) => (
           <Col span={24} key={index} style={{ marginBottom: "2rem" }}>
-            <Event node={node} />
+            <Link style={{ boxShadow: `none` }} to={node.frontmatter.slug}>
+              <Event node={node} />
+            </Link>
           </Col>
         ))}
       </Row>
@@ -40,7 +40,8 @@ export const pageQuery = graphql`
           html
           frontmatter {
             title
-            date
+            date(formatString: "MMMM DD, YYYY")
+            slug
             cover {
               childImageSharp {
                 fluid(maxWidth: 2100) {
