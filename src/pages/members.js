@@ -16,7 +16,7 @@ export default ({ data, location }) => {
 
       <h1>運営メンバー</h1>
       <p>トヨらぼの活動に積極的にコミットしてくれているメンバーです。</p>
-      <Row gutter={16} justify="center">
+      <Row gutter={16} justify="center" type="flex">
         {members.map(({ node }, index) => (
           <Col
             span={24}
