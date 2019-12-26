@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Toyohashi Technology Laboratory`,
-    author: `toyolab`,
+    author: `Toyohashi Technology Laboratory(toyolab)`,
     description: `Toyohashi University of Technology students organization`,
     siteUrl: `https://www.toyolab.io/`,
     social: {
